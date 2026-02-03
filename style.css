@@ -15,7 +15,7 @@ body {
 
 /* Contenedor principal */
 .todo-container {
-    background: rgb(199, 189, 236);
+    background: #242c2f;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
@@ -25,7 +25,7 @@ body {
 
 h2 {
     text-align: center;
-    color: #333;
+    color: #fff;
     margin-bottom: 1.5rem;
 }
 
@@ -101,11 +101,16 @@ li.completed span {
 
 h1,
 span {
-    color: #333;
-    background-color: #888;
-    background: rgb(199, 189, 236);
+    color: #fff;
+    background: #242c2f;
     border-radius: 12px;
     padding: 20px;
+    max-width: 400px;
+}
+
+a {
+    text-decoration: none;
+    color: #a0a0a0;
 }
 
 @media (max-width: 480px) {
