@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Lista de Tareas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Mi Lista de Tareas</h1>
+    <div class="todo-container">
+        <h2>Lista de Tareas</h2>
+        
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="¿Qué hay que hacer hoy?">
+            <button onclick="addTask()">Agregar</button>
+        </div>
+
+        <ul id="taskList">
+            <li>
+                <span>Ejemplo de tarea pendiente</span>
+                <button class="delete-btn">Eliminar</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function addTask() {
+            const input = document.getElementById('taskInput');
+            const taskText = input.value;
+
+            if (taskText === '') return;
+
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span>${taskText}</span>
+                <button class="delete-btn" onclick="this.parentElement.remove()">Eliminar</button>
+            `;
+            
+            li.addEventListener('click', function() {
+                this.classList.toggle('completed');
+            });
+
+            document.getElementById('taskList').appendChild(li);
+            input.value = '';
+        }
+    </script>
+
+    <footer><span>Elaborado por: <a href="https://github.com/aaronvalera">Aaron Valera</a></span></footer>
+</body>
+</html>
